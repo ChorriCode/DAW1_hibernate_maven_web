@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence xmlns="http://xmlns.jcp.org/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence
+  http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd"
+  version="2.1">
+ 
+ <!-- nombre de la unidad de persistencia que en este caso lo hago
+ 	  coincidir con el nombre de la base de datos -->
+  <persistence-unit name="libreria">
+    <class>model.Cliente</class>
+    <class>model.Libro</class>
+    <class>model.Pedido</class>
+    <class>model.LineaPedido</class>
+    <class>model.Student</class>
+    <class>model.Department</class>
+ 
+    <properties>
+      <!-- Configuring JDBC properties -->
+      <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/prueba_hibernate" />
+      <property name="javax.persistence.jdbc.user" value="root" />
+      <property name="javax.persistence.jdbc.password" value="" />
+      <property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver" />
+ 
+      <!-- Hibernate properties -->
+      <property name="hibernate.show_sql" value="true" />
+      <property name="hibernate.format_sql" value="true" />
+      <property name="hibernate.dialect" value="org.hibernate.dialect.MySQL5InnoDBDialect" />
+      <property name="hibernate.hbm2ddl.auto" value="update" />
+ 	  <property name="hibernate.enable_lazy_load_no_trans" value="true"/>
+      <!-- Configuring Connection Pool 
+      <property name="hibernate.c3p0.min_size" value="5" />
+      <property name="hibernate.c3p0.max_size" value="20" />
+      <property name="hibernate.c3p0.timeout" value="500" />
+      <property name="hibernate.c3p0.max_statements" value="50" />
+      <property name="hibernate.c3p0.idle_test_period" value="2000" />-->
+    </properties>
+  </persistence-unit>
+</persistence>
+  
