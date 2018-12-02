@@ -32,7 +32,7 @@
 					
 					<c:forEach var="libro" items="${listadoLibros}">
 						<tr>
-							<td>${libro.titulo}<a href="ServletControllerLibro?libroId=${libro.id}">add</a></td>
+							<td>${libro.titulo}<a href="ServletLibro?libroId=${libro.id}">add</a></td>
 							<td>${libro.autor}</td>
 							<td>${libro.precio}</td>
 						</tr>

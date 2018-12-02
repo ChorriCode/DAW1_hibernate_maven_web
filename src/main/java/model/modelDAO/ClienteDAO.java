@@ -1,6 +1,7 @@
 package model.modelDAO;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
@@ -113,6 +114,14 @@ public class ClienteDAO {
 		 
 	 }
 
+	 public List authenticate(String user, String password) throws Exception {
+		 this.em = emf.createEntityManager();
+		 Query query = em.createQuery("FROM Cliente WHERE LOGIN_USUARIO = :user AND LOGIN_CLAVE = :password");
+		 query.setParameter("user", user);
+		 query.setParameter("password", password);
+		 
+	        return query.getResultList();
+	    }
 	
 	public void cerrar() {
 		this.emf.close();

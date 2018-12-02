@@ -12,13 +12,13 @@ import javax.servlet.http.HttpServletResponse;
  * Servlet implementation class ServletController
  */
 @WebServlet(description = "Controlador Gestion Libros", urlPatterns = { "/ServletControllerLibro" })
-public class ServletControllerLibro extends HttpServlet {
+public class ServletLibro extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public ServletControllerLibro() {
+    public ServletLibro() {
         super();
         // TODO Auto-generated constructor stub
     }

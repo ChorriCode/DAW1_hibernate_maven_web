@@ -8,6 +8,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import model.Libro;
 import model.modelDAO.DatosDAO;
@@ -16,22 +17,28 @@ import model.modelDAO.DatosDAO;
  * Servlet implementation class ControllerServletMain
  */
 @WebServlet("/ControllerServletMain")
-public class ControllerServletMain extends HttpServlet {
+public class ServletControllerMain extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public ControllerServletMain() {
+    public ServletControllerMain() {
         super();
         // TODO Auto-generated constructor stub
     }
+
+	@Override
+	public void init() throws ServletException {
+		System.out.println("estoy dentro de init ControllerServletMain");
+	}
 
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
+		HttpSession mySession = request.getSession(true);
 		response.getWriter().append("Served at: ").append(request.getContextPath());
 		DatosDAO<Libro> accesoLibro = new DatosDAO<Libro>(Libro.class);
 		ArrayList<Libro> listadoLibros = accesoLibro.getListadoDatos();
