@@ -3,6 +3,7 @@ package test;
 import java.util.ArrayList;
 
 import model.*;
+import model.modelDAO.DatosDAO;
 
 public class TestCrearClientes {
 	public static void main(String[] args) {

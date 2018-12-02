@@ -1,10 +1,13 @@
-package model;
+package model.modelDAO;
 
 import java.util.ArrayList;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.EntityTransaction;
 import javax.persistence.Query;
+
+import model.DataManager;
+import model.Libro;
 
 public class LibroDAO {
 

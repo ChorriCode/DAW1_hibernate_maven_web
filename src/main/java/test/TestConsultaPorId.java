@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import model.*;
+import model.modelDAO.DatosDAO;
 
 
 public class TestConsultaPorId {

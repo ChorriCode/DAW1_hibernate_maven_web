@@ -5,6 +5,6 @@
         <wb-resource deploy-path="/" source-path="/target/m2e-wtp/web-resources"/>
         <wb-resource deploy-path="/" source-path="/src/main/webapp" tag="defaultRootSource"/>
         <property name="context-root" value="hibernate"/>
-        <property name="java-output-path" value="/hibernate/target/classes"/>
+        <property name="java-output-path" value="/hibernate_maven_web/target/classes"/>
     </wb-module>
 </project-modules>
