@@ -42,10 +42,11 @@ public class ServletLogin extends HttpServlet {
 		
 		String user = request.getParameter("user");
 		String password = request.getParameter("password");
+		String path = "index.jsp";
 		//comprobamos que ambos inputs envíen datos para validar
 		if (user.isEmpty() || password.isEmpty()) {
 			request.setAttribute("error", "Usuario y password no pueden ir vacíos");
-            RequestDispatcher rs = request.getRequestDispatcher("jsp/login.jsp");
+            RequestDispatcher rs = request.getRequestDispatcher(path);
             rs.forward(request, response);
 		} else {
 			//consultamos la base de datos para comprobar user y password
@@ -54,8 +55,10 @@ public class ServletLogin extends HttpServlet {
 				List resultado = consultaLogin.authenticate(user, password);
 				// si List está vacío o tiene datos sabremos si el usr y password están o no en la bbdd
 				if (resultado.isEmpty()) {
+					
 					request.setAttribute("error", "Usuario y/o password invalido");
 				} else {
+					path = "/jsp/menu.jsp";
 					request.setAttribute("error", "Usuario y password CORRECTO");
 				}
 			} catch (Exception e) {
@@ -63,7 +66,7 @@ public class ServletLogin extends HttpServlet {
 				e.printStackTrace();
 			}
 			
-            RequestDispatcher rs = request.getRequestDispatcher("jsp/login.jsp");
+            RequestDispatcher rs = request.getRequestDispatcher(path);
             rs.forward(request, response);
 		}
 	}

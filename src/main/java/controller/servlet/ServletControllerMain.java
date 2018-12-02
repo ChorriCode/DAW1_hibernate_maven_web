@@ -43,7 +43,7 @@ public class ServletControllerMain extends HttpServlet {
 		DatosDAO<Libro> accesoLibro = new DatosDAO<Libro>(Libro.class);
 		ArrayList<Libro> listadoLibros = accesoLibro.getListadoDatos();
 		request.setAttribute("listadoLibros", listadoLibros);
-		request.getRequestDispatcher("index.jsp").forward(request, response);
+		request.getRequestDispatcher("jsp/menu.jsp").forward(request, response);
 	}
 
 	/**

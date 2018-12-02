@@ -1,45 +1,21 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<!doctype html>
-<html lang="es">
+<%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8"%>
+<%@ taglib prefix = "c" uri = "http://java.sun.com/jsp/jstl/core" %>
+<!DOCTYPE html>
+<html>
 	<head>
 		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-		<meta name="author" content="Javier Hernández">
-		<title>CRUD Java JPA Hiberante</title>
+		<title>Login</title>
 	</head>
 	<body>
-		<header>
-				<h1>CRUD Java + JPA + Hibernate + MySQL</h1>
-				<span id="autor">Fco. Javier Hernández</span>
-		</header>
-		<nav>
-			<ul>
-				<li><a href="ControllerServletMain">Listar Libros</a></li>
-				<li>Buscar Pedido</li>
-				<li></li>
-			</ul>
-		</nav>
-		<main>
-			<section>
-				<table>
-					<tr>
-						<th>Título</th>
-						<th>Autor</th>
-						<th>Precio</th>
-					</tr>
-					
-					<c:forEach var="libro" items="${listadoLibros}">
-						<tr>
-							<td>${libro.titulo}<a href="ServletLibro?libroId=${libro.id}">add</a></td>
-							<td>${libro.autor}</td>
-							<td>${libro.precio}</td>
-						</tr>
-					</c:forEach>
-					
-				</table>
-			</section>
-		</main>
+		<h1>LOGIN</h1>
+		<form action="../../hibernate/ServletLogin" method="post">
+			<p>usuario válido = janniel - password válido = 1234</p>
+			nombre:
+			<input type="text" name="user"/>
+			password:
+			<input type="password" name="password" />
+			<input type="submit" value="login" />
+		</form>
+		<c:out value="${error}"/>
 	</body>
 </html>
