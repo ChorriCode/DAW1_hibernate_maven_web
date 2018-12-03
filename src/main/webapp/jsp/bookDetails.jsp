@@ -14,5 +14,6 @@
 		<p>Autor: ${book.autor}</p>
 		<p>Precio: ${book.precio}</p>
 	</div>
+	<a href="./jsp/menu.jsp">principal</a>
 </body>
 </html>

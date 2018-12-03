@@ -11,7 +11,7 @@
 	</head>
 	<body>
 		<header>
-				<h1>CRUD Java + JPA + Hibernate + MySQL</h1>
+				<h1>CRUD JavaEE + JSP + JSTL + JPA + MySQL + Hibernate</h1>
 				<span id="autor">Fco. Javier Hernández</span>
 		</header>
 		<nav>

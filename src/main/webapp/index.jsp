@@ -8,7 +8,7 @@
 	</head>
 	<body>
 		<h1>LOGIN</h1>
-		<form action="../../hibernate/ServletLogin" method="post">
+		<form action="ServletLogin" method="post">
 			<p>usuario válido = janniel - password válido = 1234</p>
 			nombre:
 			<input type="text" name="user"/>
@@ -19,3 +19,4 @@
 		<c:out value="${error}"/>
 	</body>
 </html>
+
